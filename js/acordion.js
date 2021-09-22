@@ -1,37 +1,18 @@
-// const btns = document.querySelectorAll('.feature__link');
-// const lists = document.querySelectorAll('.feature-sub');
 
-// btns.forEach((btnItem, index) => {
-//     btnItem.addEventListener('click', () => {
-//         btns.forEach((btnItem) => {
-//             btnItem.classList.remove('feature__link-active');
-//         })
-//         btnItem.classList.add('feature__link-active');
-//     })
+//написано акордеон для сеції feature-list
+const btns = document.querySelectorAll('.feature__link');
+const lists = document.querySelectorAll('.feature-sub');
 
-//     lists.forEach((listItem) => {
-//         listItem.classList.add('hidden')
-//     })
-
-//     lists[index].classList.remove('hidden')
-// })
-
-
-const btns = document.querySelectorAll('.feature__link')
-const lists = document.querySelectorAll('.feature-sub')
-
-btns.forEach((btnItem, index) => {
-    btnItem.addEventListener('click', () => {
-        btns.forEach((btnItem) => {
-            btnItem.classList.remove('feature__link_active')
+btns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        btns.forEach((btnItem, numIndex) => {
+            if (btnItem === btn) {
+                btnItem.classList.toggle('feature__link_active')
+                lists[numIndex].classList.toggle('hidden')
+            } else {
+                btnItem.classList.remove('feature__link_active')
+                lists[numIndex].classList.add('hidden') 
+            }
         })
-
-        btnItem.classList.add('feature__link_active')
-
-        lists.forEach((listItem) => {
-            listItem.classList.add('hidden')
-        })
-
-        lists[index].classList.remove('hidden')
     })
 })
