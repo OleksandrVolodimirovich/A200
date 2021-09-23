@@ -1,4 +1,4 @@
-//1-й варіан простого плавного скролу
+// 1-й варіан простого плавного скролу
 /*
 const linksHead = document.querySelectorAll('.menu-list__link');
 
@@ -37,6 +37,5 @@ newArray.forEach(itemOrAnyName => {
             behavior: 'smooth', 
             block: 'start' 
         })
-
     })
 })
